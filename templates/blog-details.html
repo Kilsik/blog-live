@@ -2,6 +2,9 @@
 {% extends 'base.html' %}
 {% load static %}
 <html lang="en">
+    {% block title %}
+    <title>{{ post.title }} - Blog Details</title>
+    {% endblock %}
 <body>
   {% block content %}
   <!--================ Start Blog Post Area =================-->
