@@ -1,4 +1,5 @@
 import folium
+import datetime
 
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
@@ -32,6 +33,7 @@ def index(request):
     context = {
         'most_popular_posts': [serialize_post(post) for post in popular_posts],
         'fresh_posts': [serialize_post(post) for post in fresh_posts],
+        'today': datetime.datetime.now(),
     }
     return render(request, 'index.html', context)
 
@@ -63,6 +65,7 @@ def post_detail(request, slug):
 
     context = {
         'post': serialized_post,
+        'today': datetime.datetime.now(),
     }
     return render(request, 'blog-details.html', context)
 
@@ -79,4 +82,4 @@ def contact(request):
         tooltip="Мы здесь",
     ).add_to(folium_map)
     html_map = folium_map._repr_html_()
-    return render(request, 'contact.html', {"html_map": html_map})
+    return render(request, 'contact.html', {"html_map": html_map, 'today': datetime.datetime.now()})
