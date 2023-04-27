@@ -12,6 +12,9 @@
 </head>
 <body>
   <!--================Header Menu Area =================-->
+  {% for post in most_popular_posts %}
+    <h4>{{ post.slug }}<br></h4>
+  {% endfor %}
   <header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -98,7 +101,7 @@
                 <div class="details mt-20">
                   <h3>{{ post.title }}</h3>
                   <p>{{ post.text|truncatechars:200 }}</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                  <a class="button" href="{% url 'post_detail' slug=post.slug %}">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
             {% endfor %}
