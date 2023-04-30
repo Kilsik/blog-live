@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
 {% extends 'base.html' %}
-{% load static %}
-<head>
-  {% block title %}
-  <title>Sensive Blog - Home</title>
-  {% endblock %}
-</head>
-<body>
+<html lang="en">
+  {% load static %}
+  <head>
+    {% block title %}
+    <title>Sensive Blog - Home</title>
+    {% endblock %}
+  </head>
   {% block content %}
-    <!--================ Blog slider start =================-->
+  <!--================ Blog slider start =================-->
     <section>
       <div class="container">
         <div class="d-flex">
@@ -30,9 +29,9 @@
         </div>
       </div>
     </section>
-    <!--================ Blog slider end =================-->
+  <!--================ Blog slider end =================-->
 
-    <!--================ Start Blog Post Area =================-->
+  <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin mt-4">
       <div class="container">
         <div class="row">
@@ -44,7 +43,7 @@
                   <ul class="thumb-info", style="max-width: 550px">
                     <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
                     <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at }}</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }}</a></li>
+                    <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
                   </ul>
                 </div>
                 <div class="details mt-20">
@@ -104,7 +103,6 @@
         </div>
       </div>
     </section>
-    <!--================ End Blog Post Area =================-->
+  <!--================ End Blog Post Area =================-->
   {% endblock %}
-</body>
 </html>
